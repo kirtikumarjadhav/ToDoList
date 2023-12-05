@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'taskklist.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <h2 class="logo" >
+            <img height="50px" width="160px" src="{% static 'logo2.png' %}">
+        </h2>
+        <div class="sidebar-content">
+            <h2>Hello {{request.user|title}} </h2>
+          <ul class="sidebar-menu">
+            <li><a href="/TaskList">&#128229; Inbox</a></li>
+            <li><a href="/task-create"> &#10133; Add Task</a></li>
+            <li><a href="/">&#10224; Home</a></li>
+            <li><a href="/Features">&#10000; Features</a></li>
+            <li><a href="/ForTeams"> &#x2728; For Teams</a></li>
+            <li class="logout-link"><a href="{% url 'logout' %}">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      
+
+
+    <div class="container">
+    <div class="header-bar">
+        <div>
+            <h1>Hello {{request.user|title}} </h1>
+            <h3 style="margin:0">You have <i>{{count}}</i>  incomplete task {{ count|pluralize:"'s" }}</h3>
+        </div>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %} ">Logout</a>
+        {% else %}
+        <a href="{% url 'login' %} ">LogIn</a>
+        {% endif %}
+    
+    </div>
+    
+    <div id="search-add-wrapper">
+        <form method="GET" style="display: flex;">
+            <input type='text' name='search-area' placeholder="Search your task" value="{{search_input}}">
+            <input class="button" type="submit" value='Search'>
+        </form>
+        {% if tasks|length > 0 %}
+        <a id="add-link" href="{% url 'task-create' %}">&#x2b;</a>
+        {% endif %}
+    </div>
+    
+    
+    
+    <div id="tasklist" class="task-items-wrapper">
+        <!-- Display current day and time -->
+        <div class="current-day-time">
+            <p>Today is: <strong>{{ current_day }}</strong></p>
+            <p>Current time: <strong>{{ current_time }}</strong></p>
+    </div>
+    
+    <div id="tasklist" class="task-items-wrapper">
+        {% for task in tasks %}
+        <div class="task-wrapper" data-position="{{task.pk}}">
+            <div class="task-title">
+                {% if task.complete %}
+                <div class="task-complete-icon"></div>
+                <i><s><a href="{% url 'task-update' task.id %}">{{task}}</a></s></i> {% else %}
+                <div class="task-incomplete-icon"></div>
+                <a href="{% url 'task-update' task.id %}">{{task}}</a> {% endif %}
+            </div>
+            <div class="task-controls">
+                <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
+                <span class="handle">&nbsp;&#10247;</span>
+            </div>
+        </div>
+    
+        {% empty %}
+        <div style="text-align: center; padding-bottom: 10px; line-height: 1em;">
+            <h3>No new tasks are created.</h3>
+            <h3>Create a <a style="text-decoration: none; color: #e53935;" href="{% url 'task-create' %}">New task</a> ! </h3>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    </div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+   
+

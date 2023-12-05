@@ -1,0 +1,40 @@
+.header-bar {
+    background-color: #f8f9fa;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-bar h1, .header-bar h3 {
+    margin: 0;
+}
+
+#search-add-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.task-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.task-wrapper:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.delete-link:hover {
+    color: #e53935;
+}
+
+@media (max-width: 768px) {
+    .header-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

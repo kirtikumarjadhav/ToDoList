@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins',sans-serif ;
+}
+
+
+body{
+    background: #f9f9f9;
+    min-height: 500px;
+    overflow-x: hidden;
+    background-image: url(https://webstockreview.net/images/backgrou);
+    background-size: cover;
+    background-repeat: no-repeat;  
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+.logo{
+    font-size: 2em;
+    color: #aa3904;
+    pointer-events:none;
+    cursor: pointer;
+    
+}
+.navigation a {
+    text-decoration: none;
+    color:#aa3904;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 2px;
+    font-weight: 600;
+    display: inline;
+      
+        
+      
+
+}
+.navigation a:hover {
+    background: #aa3904;
+    color: #f9f9f9;
+
+
+}
+.float1{
+    border-radius: 10px;
+    opacity: 0.5;
+}

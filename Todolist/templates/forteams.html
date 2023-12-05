@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'forteams.css' %}">
+</head>
+<body>
+    <header>
+      
+        <h6 class="logo" >
+          <img height="50px" width="160px" src="{% static 'logo2.png' %}">
+        </h6>
+        <nav class="navigation">
+          <a href="/Features">Features</a>
+          <a href="/ForTeams">For Teams</a>|
+          
+          <a href="/login/">Log in</a>
+          <a href="/register/">Start For Free</a>
+          </nav>
+      </header> 
+      <br>
+      <br>
+      <br>
+      <div class="container my-3">
+        <h1 class="text-center" >From overwhelmed <br>to on top of it</h1>
+        </div>
+      <div class="container my-3">
+        <h3 class="text-center" >Todoist gives you the confidence that everything’s organized and <br> accounted for, so you can make progress on the things that <br> are important to you. </h3>
+  
+      </div>
+      <br>
+      <br>
+      
+      <div>
+        <a href="{% url 'register' %}" class="button">Start for free</a>
+      </div>
+      <div>
+        <img class="img1" fetchpriority="high" width="1920" height="820" src="{% static 't1.png' %}">
+      </div>
+      <div>
+        <img class="img2" fetchpriority="high" width="1920" height="820" src="{% static 't2.png' %}">
+        <h2 class="head1">Your team’s <br>tasks, files,<br> and discussions</h2>
+        <h3 class="head2">All neatly organized in one place.<br>
+           <br> - Plan projects & assign responsibility
+          <br> - Share files & discuss the details
+          <br> - Track progress & deliver on time</h3>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="column">
+        <marquee behavior="scroll" direction="left" width="100%">
+          <img  alt="Natural" src="{% static 'logo.jpg' %}">
+          <img   alt="Natural" src="{% static 'logo.jpg' %}">
+          <img   alt="Natural" src="{% static 'logo.jpg' %}">
+          <img   alt="Natural" src="{% static 'logo.jpg' %}">
+        </marquee>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div>
+        <img class="img3" fetchpriority="high" width="1520" height="820" src="{% static 't3.png' %}">
+        <h2 class="head3">Keep projects <br>on track</h2>
+        <h3 class="head4">Get a clear overview of <br>everything  your team is working on – what’s <br>already been done and<br> what’s coming up next.<br>
+
+          <br>- See your team’s activity stream by project or team member
+          <br>- Group, sort, and filter tasks to wrangle big projects
+          <br>- Save custom views for upcoming or overdue tasks</h3>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      <div>
+        <img class="img4" fetchpriority="high" width="1920" height="820" src="{% static 't4.png' %}">
+        <h2 class="head5">Create a dedicated home<br> for your team’s work</h2>
+        <h3 class="head6">Give your team a shared place to collaborate <br>and stay on top of it all – alongside<br> but separate from everyone’s<br> personal tasks and projects.</h3>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div>
+        <img class="img5" fetchpriority="high" width="1920" height="820" src="{% static 't5.png' %}">
+      </div>
+      <div>
+        <p class="para">“Todoist gives me the peace of mind knowing <br>I am doing exactly what I need to do, exactly when I need to do it.”
+         <br>– Ashley W.</p>
+       </div>
+
+</body>
+</html>
